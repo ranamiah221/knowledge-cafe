@@ -5,6 +5,8 @@ import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+   <div className='w-4/5 mx-auto'>
+   <App />
+   </div>
   </StrictMode>,
 )
