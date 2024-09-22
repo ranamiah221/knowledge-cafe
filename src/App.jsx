@@ -1,11 +1,12 @@
 import './App.css'
+import Header from './components/Header/Header'
 
 function App() {
 
 
   return (
     <>
-      <h2 className='text-2xl font-medium bg-red-300'>knowledge cafe</h2>
+      <Header></Header>
       
     </>
   )
