@@ -6,13 +6,16 @@ import Header from './components/Header/Header'
 
 function App() {
 const [bookmarks,setBookmarks]=useState([]);
-const [markAsRead,setMarkAsRead]=useState(0);
+const [readingTime, setReadingTime]=useState(0);
 const handleBookmark=(blog)=>{
     const newBookmark=[...bookmarks,blog];
     setBookmarks(newBookmark);
 }
-const handleMarkAsRead=(time)=>{
-  console.log('set read time',time);
+const handleMarkAsRead=(id,time)=>{
+  const newReadingTime=readingTime + time;
+  setReadingTime(newReadingTime);
+  const remainingBookmarks=bookmarks.filter(bookmark=> bookmark.id !== id);
+  setBookmarks(remainingBookmarks); 
 }
 
   return (
@@ -20,7 +23,7 @@ const handleMarkAsRead=(time)=>{
       <Header></Header>
       <div className='md:flex gap-2'>
           <Blogs handleMarkAsRead={handleMarkAsRead} handleBookmark={handleBookmark}></Blogs>
-          <Bookmarks bookmarks={bookmarks}></Bookmarks>
+          <Bookmarks readingTime={readingTime} bookmarks={bookmarks}></Bookmarks>
       </div>
     </>
   )

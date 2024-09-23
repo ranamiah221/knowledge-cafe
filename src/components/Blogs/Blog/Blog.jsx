@@ -3,6 +3,7 @@ import { BsBookmarkStar } from "react-icons/bs";
 
 const Blog = ({ blog, handleBookmark,handleMarkAsRead }) => {
   const {
+    id,
     cover,
     title,
     author,
@@ -29,19 +30,19 @@ const Blog = ({ blog, handleBookmark,handleMarkAsRead }) => {
                 </div>
             </div>
             <div className="flex gap-2">
-                  <p>{reading_time} min read</p>
-                  <button onClick={()=>handleBookmark(blog)}><BsBookmarkStar></BsBookmarkStar></button>
+                  <p className="text=2xl font-medium ">{reading_time} Min Read</p>
+                  <button onClick={()=>handleBookmark(blog)}><BsBookmarkStar className="text-4xl"></BsBookmarkStar></button>
 
             </div>
          </div>
         <h2 className="card-title">{title}</h2>
          <p>
             {
-                hashtag.map((hash,idx)=> <span key={idx}> <a href="">{hash}</a> </span>)
+                hashtag.map((hash,idx)=> <span className="text-blue-500 text-xl font-normal" key={idx}> <a href="">{hash}</a> </span>)
             }
          </p>
       </div>
-      <button className="text-blue-700 text-xl font-normal underline text-start pl-10 mb-10" onClick={()=>handleMarkAsRead(reading_time)}>Marks as Read</button>
+      <button className="text-blue-700 text-xl font-normal underline text-start pl-10 mb-10" onClick={()=>handleMarkAsRead(id,reading_time)}>Marks as Read</button>
     </div>
   );
 };
