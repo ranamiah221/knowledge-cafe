@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
 
+import Bookmarks from './../../Bookmarks/Bookmarks';
+import { BsBookmarkStar } from "react-icons/bs";
+
 const Blog = ({ blog }) => {
   const {
     cover,
@@ -27,8 +30,9 @@ const Blog = ({ blog }) => {
                 <p className="text-xl font-normal">{posted_date}</p>
                 </div>
             </div>
-            <div>
+            <div className="flex gap-2">
                   <p>{reading_time} min read</p>
+                  <button><BsBookmarkStar></BsBookmarkStar></button>
 
             </div>
          </div>
