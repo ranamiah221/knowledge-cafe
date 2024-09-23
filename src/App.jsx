@@ -14,7 +14,7 @@ const handleBookmark=(blog)=>{
   return (
     <>
       <Header></Header>
-      <div className='md:flex'>
+      <div className='md:flex gap-2'>
           <Blogs handleBookmark={handleBookmark}></Blogs>
           <Bookmarks bookmarks={bookmarks}></Bookmarks>
       </div>
