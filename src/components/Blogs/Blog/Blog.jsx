@@ -1,9 +1,7 @@
 import PropTypes from "prop-types";
-
-import Bookmarks from './../../Bookmarks/Bookmarks';
 import { BsBookmarkStar } from "react-icons/bs";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleBookmark }) => {
   const {
     cover,
     title,
@@ -32,7 +30,7 @@ const Blog = ({ blog }) => {
             </div>
             <div className="flex gap-2">
                   <p>{reading_time} min read</p>
-                  <button><BsBookmarkStar></BsBookmarkStar></button>
+                  <button onClick={()=>handleBookmark(blog)}><BsBookmarkStar></BsBookmarkStar></button>
 
             </div>
          </div>
@@ -48,5 +46,6 @@ const Blog = ({ blog }) => {
 };
 Blog.propTypes={
     blog:PropTypes.object.isRequired,
+    handleBookmark:PropTypes.func
 }
 export default Blog;
